@@ -1,10 +1,13 @@
 package com.drawindapp.colourbook_drawandpaint
 
+import android.Manifest
 import android.app.Dialog
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import kotlinx.android.synthetic.main.activity_main.*
@@ -67,5 +70,24 @@ class MainActivity : AppCompatActivity() {
             )
             mImageButtonCurrentPaint = view
         }
+    }
+
+    private fun requestStoragePermission(){
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this,
+            arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE).toString())){
+            Toast.makeText(this,"NEED PERMISSION TO ADD A BACKGROUND", Toast.LENGTH_SHORT).show()
+        }
+        ActivityCompat.requestPermissions(
+            this, arrayOf(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ),
+            STORAGE_PERMISSION_CODE
+        )
+    }
+
+    companion object{
+        private const val STORAGE_PERMISSION_CODE = 1
     }
 }
