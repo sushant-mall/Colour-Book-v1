@@ -22,7 +22,6 @@
             android:id="@+id/iv_background"
             android:scaleType="centerCrop"
             android:contentDescription="backgroundImage"
-            android:src="@drawable/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
@@ -166,12 +165,33 @@
             android:scaleType="fitXY"
             android:layout_margin="5dp"
             />
+
+        <ImageButton
+            android:id="@+id/ib_undo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_undo"
+            android:contentDescription="undo"
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            />
+
         <ImageButton
             android:id="@+id/ib_brush"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_brush"
             android:contentDescription="brush_image"
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            />
+
+        <ImageButton
+            android:id="@+id/ib_save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_save"
+            android:contentDescription="save_image"
             android:scaleType="fitXY"
             android:layout_margin="5dp"
             />
